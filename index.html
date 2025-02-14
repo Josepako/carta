@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para una amiga especial</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .carta {
+            background: white;
+            padding: 30px;
+            margin: 50px auto;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: aparecer 1s ease-in-out;
+        }
+        @keyframes aparecer {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .carta h1 {
+            color: #ff4081;
+            font-size: 26px;
+        }
+        .carta p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .carta h2 {
+            color: #ff1744;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+        .corazon {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: caer 5s linear infinite;
+        }
+        @keyframes caer {
+            0% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .decoracion {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 35px;
+        }
+        .boton {
+            background: #ff4081;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: 0.3s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        .boton:hover {
+            background: #e91e63;
+            transform: scale(1.05);
+        }
+        .gif-container {
+            margin-top: 15px;
+        }
+        .mensaje {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff1744;
+            margin-bottom: 10px;
+            display: none;
+        }
+        .imagen {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="decoracion">💖🌟✨</div>
+    <div class="carta">
+        <h1>Querida Paola Rumbo,</h1>
+        <p>Hoy quiero aprovechar este día especial para decirte lo importante que eres para mí. Desde que te conocí, has sido una persona que me apoya y me da consejos a un que no te haga tanto caso agradezco por eso JAJAJA. Tu amistad es un regalo que valoro muchísimo, y sabes que siempre estare apoyandote en las buenas y en las peores tambien.</p>
+        <p>Gracias por cada risa compartida, por los consejos sinceros y por estar presente en los buenos y malos momentos. Eres una persona chingona, con un corazón bien frio jaja, y me siento afortunado de llamarte mi amiga.</p>
+        <p>Espero que cumplas todas las metas que me dices y que te vaya chingon para que me lleves de viaje a nueva york JAJAJA, yo se que tu puedes cumplir todo eso, se que eres una persona que tiene su metas claras y lucha por eso, admiro mucho eso de ti. Eres como mi mejor amiga we a un que aveces me cagas porque ni me respondes pero en fin somos virgo y ntp cuando tenga mis hijos les dire que le pida a su tia paola una casa en polanco.</p>
+        <p>Sabes que siempre tendras mi sincera amistad y cualquier cosa aqui estare</p>
+        <h2>¡Feliz Día del Amor y la Amistad! 💖✨</h2>
+        <p>Con mucho cariño,<br><b>Tu amigo el mas fiel</b></p>
+        <button class="boton" onclick="mostrarMensaje()">Presiona aquí</button>
+        <div class="gif-container" id="gif-container" style="display: none;">
+            <p class="mensaje" id="mensaje">TE QUIERO MUCHO</p>
+            <img src="./CartaImg.jpeg" alt="Abrazos" width="100%">
+        </div>
+    </div>
+    <script>
+        function crearCorazon() {
+            const corazon = document.createElement("div");
+            corazon.classList.add("corazon");
+            corazon.innerHTML = "❤️";
+            corazon.style.left = Math.random() * window.innerWidth + "px";
+            corazon.style.top = "-10px";
+            corazon.style.fontSize = Math.random() * 20 + 20 + "px";
+            document.body.appendChild(corazon);
+            setTimeout(() => corazon.remove(), 5000);
+        }
+        setInterval(crearCorazon, 300);
+        
+        function mostrarMensaje() {
+            document.getElementById("gif-container").style.display = "block";
+            document.getElementById("mensaje").style.display = "block";
+        }
+    </script>
+</body>
+</html>
